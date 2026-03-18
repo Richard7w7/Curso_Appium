@@ -25,7 +25,8 @@ export const config = {
     //
     specs: [
         // ToDo: define location for spec files here
-        './test/specs/**/android-native*.js'
+        //'./test/specs/**/android-native*.js'
+        './test/specs/**/ios*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -54,23 +55,23 @@ export const config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [
+//         {
+    //capabilities for local Appium web tests on an Android Emulator
+//         'appium:platformName': 'Android',
+//         'appium:deviceName': 'emulator-5554',
+//         'appium:platformVersion': '16',
+//         'appium:automationName': 'UiAutomator2',
+//         'appium:app': path.join(process.cwd(), 'app/android/ApiDemos-debug.apk'),
+//         'appium:autoGrantPermissions': true
+//    }
         {
-//capabilities for local Appium web tests on an Android Emulator
-        'appium:platformName': 'Android',
-        'appium:deviceName': 'Medium Phone API 36.1',
-        'appium:platformVersion': '36.1',
-        'appium:automationName': 'UiAutomator2',
-        'appium:app': path.join(process.cwd(), 'app/android/ColorNote+Notepad.apk'),
-        'appium:autoGrantPermissions': true
+    //capabilities for local Appium web tests on an IOS Emulator
+        'appium:platformName': 'iOS',
+        'appium:deviceName': 'iPhone 17',
+        'appium:platformVersion': '26.3',
+        'appium:automationName': 'XCUITest',
+        'appium:app': path.join(process.cwd(), 'app/ios/UIKitCatalog.app')
     }
-    //     {
-    // //capabilities for local Appium web tests on an IOS Emulator
-    //     'appium:platformName': 'iOS',
-    //     'appium:deviceName': 'iPhone 12',
-    //     'appium:platformVersion': '26.3',
-    //     'appium:automationName': 'XCUITest',
-    //     'appium:app': path.join(process.cwd(), 'app/ios/UIKitCatalog.app')
-    // }
 ],
 
     //
