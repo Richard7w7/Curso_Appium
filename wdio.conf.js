@@ -26,7 +26,7 @@ export const config = {
     specs: [
         // ToDo: define location for spec files here
         //'./test/specs/**/android-native*.js'
-        './test/specs/**/ios*.js'
+        './test/specs/ios/ios-todo-item*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -70,7 +70,7 @@ export const config = {
         'appium:deviceName': 'iPhone 17',
         'appium:platformVersion': '26.3',
         'appium:automationName': 'XCUITest',
-        'appium:app': path.join(process.cwd(), 'app/ios/UIKitCatalog.app')
+        'appium:app': path.join(process.cwd(), 'app/ios/MVCTodo.app')
     }
 ],
 
