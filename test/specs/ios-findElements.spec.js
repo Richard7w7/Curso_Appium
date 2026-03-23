@@ -1,3 +1,5 @@
+import {$, $$, expect, driver} from '@wdio/globals'; //soporte para wdio 9 en adelante y tener funciones
+
 describe('IOS Find Elements', () => {
     it('find element by accessibility id', async () => {
         await $('~Alert Views').click();
