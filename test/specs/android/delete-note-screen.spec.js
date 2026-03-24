@@ -1,30 +1,24 @@
-import addNoteScreen from "../../screenobjects/android/add-note.screen.js";
 import deleteNoteScreen from "../../screenobjects/android/delete-note.screen.js";
 
 describe('Add Notes', () => {
-    it('Skip tutorial', async () => {
-            
-            await addNoteScreen.skipBtn.click();
-            await expect(addNoteScreen.addNoteTxt).toBeDisplayed();
-        });
     
-        it('add a note, save changes & verify note', async () => {
-            await addNoteScreen.addNoteTxt.click();
-            await addNoteScreen.textBtn.click();
-    
-            await expect(addNoteScreen.editingTxt).toBeDisplayed();
-    
-            await addNoteScreen.textTitle.setValue('Fav Anime List');
-    
-            await addNoteScreen.textNote.setValue('1. Naruto\n2. One Piece\n3. Bleach');
-    
-            await addNoteScreen.saveNote();
-            
-            await expect(addNoteScreen.editBtn).toBeDisplayed();
-            await expect(addNoteScreen.viewNote).toHaveText('1. Naruto\n2. One Piece\n3. Bleach');
-            
-    
-        });
+    before(async () => {
+        await deleteNoteScreen.skipTutorial();
+        await deleteNoteScreen.saveNote('Fav Anime List', '1. Naruto\n2. One Piece\n3. Bleach');    
+    });
+
+    beforeEach(async () => {
+        console.log('BEFORE EACH HOOK');
+    });
+
+    after(async () => {
+        console.log('AFTER HOOK');
+    });
+
+    afterEach(async () => {
+        console.log('AFTER EACH HOOK');
+    });
+
 
     it('delete note and verify deletion', async () => {
         
@@ -50,5 +44,4 @@ describe('Add Notes', () => {
         await expect(deleteNoteScreen.titleText).toBeDisplayed();
         
     });
-
 });

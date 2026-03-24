@@ -2,8 +2,9 @@ import ListScreen from '../../screenobjects/ios/list.screen';
 import ItemScreen from '../../screenobjects/ios/item.screen';
 
 describe('Todo list', () => {
-    it('Create a item into Todo List', async () => {
-        const list = "My first list";
+
+    before(async () => {
+const list = "My first list";
                 await ListScreen.createListButton.click();
                 await ListScreen.listNameInput.addValue(list);
                 await ListScreen.createButton.click();
@@ -12,6 +13,9 @@ describe('Todo list', () => {
                 await expect($(await ListScreen.todoList(list))).toBeExisting();
 
         await $(`~${list}`).click();
+    });
+
+    it('Create a item into Todo List', async () => {
                 
         await ItemScreen.addItemButton.click();
         await ItemScreen.addTitleInput.addValue('Ejemplo 1');

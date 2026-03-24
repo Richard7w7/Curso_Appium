@@ -32,7 +32,7 @@ class AddNoteScreen{
     }
 
     async saveNote(){
-        await driver.pause(2000);
+        await driver.pause(3000);
         await driver.back();
     }
 }

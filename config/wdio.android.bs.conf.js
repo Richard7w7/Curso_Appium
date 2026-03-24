@@ -1,0 +1,20 @@
+import path from "path";
+import { config as sharedConfig } from "./wdio.shared.conf.js";
+
+export const config = {
+    ...sharedConfig,
+    specs: [
+        '../test/specs/**/delete-note-screen*.js'
+    ],
+    capabilities: [
+        {
+            // capabilities for local Appium web tests on an Android Emulator
+            'appium:platformName': 'Android',
+            'appium:deviceName': 'Medium Phone API 36.1',
+            'appium:platformVersion': '16',
+            'appium:automationName': 'UiAutomator2',
+            'appium:app': path.join(process.cwd(), 'app/android/ColorNote+Notepad.apk'),
+            'appium:autoGrantPermissions': true
+        }
+    ]
+};
