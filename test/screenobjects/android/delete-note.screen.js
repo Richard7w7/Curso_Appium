@@ -38,7 +38,8 @@ class DeleteNoteScreen{
         await addNoteScreen.textTitle.setValue(titulo);
         await addNoteScreen.textNote.setValue(lista);
     
-        await this.backBtn.click();
+        driver.back(); // Simula el botón de retroceso del dispositivo para guardar la nota
+        //await this.backBtn.click();
             
         await expect(addNoteScreen.editBtn).toBeDisplayed();
         await expect(addNoteScreen.viewNote).toHaveText(lista);

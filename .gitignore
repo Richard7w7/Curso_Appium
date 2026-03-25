@@ -5,6 +5,8 @@ logs/
 *.log
 wdio-*.log
 
+log/
+
 # Test results / reports
 allure-results/
 allure-report/

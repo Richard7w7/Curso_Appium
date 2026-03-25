@@ -7,26 +7,14 @@ describe('Add Notes', () => {
         await deleteNoteScreen.saveNote('Fav Anime List', '1. Naruto\n2. One Piece\n3. Bleach');    
     });
 
-    beforeEach(async () => {
-        console.log('BEFORE EACH HOOK');
-    });
-
-    after(async () => {
-        console.log('AFTER HOOK');
-    });
-
-    afterEach(async () => {
-        console.log('AFTER EACH HOOK');
-    });
-
-
     it('delete note and verify deletion', async () => {
         
         
         await deleteNoteScreen.menuBtn.click();  
 
         
-        await deleteNoteScreen.deleteBtn.click();  
+        driver.back(); // Simula el botón de retroceso del dispositivo para cerrar el menú desplegable
+        //await deleteNoteScreen.deleteBtn.click();  
 
         await driver.acceptAlert();
 

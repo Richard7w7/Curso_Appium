@@ -18,6 +18,7 @@ describe('Add Notes', () => {
         await addNoteScreen.textNote.setValue('1. Naruto\n2. One Piece\n3. Bleach');
 
         await addNoteScreen.saveNote();
+        await addNoteScreen.saveNote();
         
         await expect(addNoteScreen.editBtn).toBeDisplayed();
         await expect(addNoteScreen.viewNote).toHaveText('1. Naruto\n2. One Piece\n3. Bleach');
